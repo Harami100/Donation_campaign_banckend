@@ -12,6 +12,8 @@ public List<Donor> findAll();
 	public void save(Donor theDonor);
 	
 	public void deleteById(int theDonorId);
+	
+	public Donor loadDonorByDonorEmail(String email);
 
 
 }

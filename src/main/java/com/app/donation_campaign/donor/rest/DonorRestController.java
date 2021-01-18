@@ -86,5 +86,10 @@ public class DonorRestController {
 		return "Deleted donor id - " + donorId;
 	}
 
-
+	@PostMapping("/login")
+	public Donor loginDonor(@RequestBody Donor theDonor) {
+		
+		Donor donor=donorService.loadDonorByDonorEmail(theDonor.getDonor_email());
+		return donor;
+	}
 }

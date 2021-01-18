@@ -57,6 +57,16 @@ public class DonorServiceImpl implements DonorService{
 		// TODO Auto-generated method stub
 		donorRepository.deleteById(theDonorId);
 	}
+
+	@Override
+	public Donor loadDonorByDonorEmail(String email) {
+		// TODO Auto-generated method stub
+		Donor donor=donorRepository.findByDonorEmail(email);
+		if (donor== null) {
+            return null;
+        }
+		return donor;
+	}
 	
 
 }
