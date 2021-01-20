@@ -3,6 +3,7 @@ package com.app.donation_campaign.category.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.donation_campaign.category.entity.Category;
 import com.app.donation_campaign.category.service.CategoryService;
-
+//@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-//@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="http://localhost:4200")
 @RequestMapping("/api")
 public class CategoryRestController {
 private CategoryService categoryService;
@@ -44,6 +45,7 @@ private CategoryService categoryService;
 		return theCategory;
 	}
 	
+	//@CrossOrigin(origins="http://localhost:4200")
 	@PostMapping("/categories")
 	public Category addCategory(@RequestBody Category theCategory) {
 		
