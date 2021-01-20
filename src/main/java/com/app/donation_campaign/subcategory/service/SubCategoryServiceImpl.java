@@ -59,5 +59,11 @@ public class SubCategoryServiceImpl implements SubCategoryService {
 		subCategoryRepository.deleteById(theSubCategoryId);
 	}
 
+	@Override
+	public long findCountOfSubCategory() {
+		// TODO Auto-generated method stub
+		return subCategoryRepository.count();
+	}
+
 
 }

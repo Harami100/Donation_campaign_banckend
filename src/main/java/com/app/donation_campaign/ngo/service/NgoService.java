@@ -5,12 +5,14 @@ import java.util.List;
 import com.app.donation_campaign.ngo.entity.Ngo;
 
 public interface NgoService {
-	public List<Ngo> findAll();
+public List<Ngo> findAll();
 	
 	public Ngo findById(int theNgoId);
 	
 	public void save(Ngo theNgo);
 	
 	public void deleteById(int theNgoId);
+
+	public long findCountOfNgo();
 
 }

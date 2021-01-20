@@ -3,7 +3,6 @@ package com.app.donation_campaign.donor.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +17,7 @@ import com.app.donation_campaign.donor.entity.Donor;
 import com.app.donation_campaign.donor.service.DonorService;
 
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+//@CrossOrigin(origins="http://localhost:4200")
 @RequestMapping("/api")
 public class DonorRestController {
 	
@@ -91,5 +90,10 @@ public class DonorRestController {
 		
 		Donor donor=donorService.loadDonorByDonorEmail(theDonor.getDonor_email());
 		return donor;
+	}
+	
+	@GetMapping("/totalNumberOfDonor")
+	public long findTotalNumberOfDonor() {
+		return donorService.findCountOfDonor();
 	}
 }

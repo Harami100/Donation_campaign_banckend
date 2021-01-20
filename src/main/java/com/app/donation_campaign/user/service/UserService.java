@@ -13,4 +13,6 @@ public List<User> findAll();
 	
 	public void deleteById(int theUserId);
 
+	public long findCountOfUser();
+
 }

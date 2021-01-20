@@ -60,6 +60,12 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		userRepository.deleteById(theUserId);
 	}
+
+	@Override
+	public long findCountOfUser() {
+		// TODO Auto-generated method stub
+		return userRepository.count();
+	}
 	
 
 

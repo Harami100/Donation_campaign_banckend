@@ -13,4 +13,5 @@ public List<Category> findAll();
 	
 	public void deleteById(int theCategoryId);
 
+	public long findCountOfCategory();
 }

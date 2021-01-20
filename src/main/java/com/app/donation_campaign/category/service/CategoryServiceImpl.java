@@ -60,6 +60,12 @@ public class CategoryServiceImpl implements CategoryService {
 		categoryRepository.deleteById(theCategoryId);
 	}
 
+	@Override
+	public long findCountOfCategory() {
+		// TODO Auto-generated method stub
+		return categoryRepository.count();
+	}
+
 	
 
 }

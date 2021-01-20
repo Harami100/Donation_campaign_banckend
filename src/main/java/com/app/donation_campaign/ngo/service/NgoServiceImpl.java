@@ -65,4 +65,11 @@ public class NgoServiceImpl implements NgoService{
 	}
 
 
+	@Override
+	public long findCountOfNgo() {
+		// TODO Auto-generated method stub
+		return ngoRepository.count();
+	}
+
+
 }

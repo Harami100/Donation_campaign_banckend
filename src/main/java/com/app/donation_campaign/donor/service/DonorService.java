@@ -14,6 +14,8 @@ public List<Donor> findAll();
 	public void deleteById(int theDonorId);
 	
 	public Donor loadDonorByDonorEmail(String email);
+	
+	public long findCountOfDonor();
 
 
 }

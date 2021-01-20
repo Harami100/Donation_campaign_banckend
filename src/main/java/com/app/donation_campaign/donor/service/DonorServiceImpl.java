@@ -67,6 +67,12 @@ public class DonorServiceImpl implements DonorService{
         }
 		return donor;
 	}
+
+	@Override
+	public long findCountOfDonor() {
+		// TODO Auto-generated method stub
+		return donorRepository.count();
+	}
 	
 
 }
