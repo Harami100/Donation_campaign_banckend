@@ -31,23 +31,23 @@ public class Ngo {
 	@Column(name = "ngo_password")
 	private String ngo_password;
 	
-	@Column(name = "ngo_description")
-	private String ngo_description;
-
+	
 	public Ngo() {
 		super();
 	}
 
-	public Ngo(String ngo_name, String ngo_address, long ngo_phoneNo, String ngo_email, String ngo_password,
-			String ngo_description) {
+	public Ngo(int ngo_id, String ngo_name, String ngo_address, long ngo_phoneNo, String ngo_email,
+			String ngo_password) {
 		super();
+		this.ngo_id = ngo_id;
 		this.ngo_name = ngo_name;
 		this.ngo_address = ngo_address;
 		this.ngo_phoneNo = ngo_phoneNo;
 		this.ngo_email = ngo_email;
 		this.ngo_password = ngo_password;
-		this.ngo_description = ngo_description;
 	}
+
+
 
 	public int getNgo_id() {
 		return ngo_id;
@@ -97,22 +97,11 @@ public class Ngo {
 		this.ngo_password = ngo_password;
 	}
 
-	public String getNgo_description() {
-		return ngo_description;
-	}
-
-	public void setNgo_description(String ngo_description) {
-		this.ngo_description = ngo_description;
-	}
-
 	@Override
 	public String toString() {
 		return "Ngo [ngo_id=" + ngo_id + ", ngo_name=" + ngo_name + ", ngo_address=" + ngo_address + ", ngo_phoneNo="
-				+ ngo_phoneNo + ", ngo_email=" + ngo_email + ", ngo_password=" + ngo_password + ", ngo_description="
-				+ ngo_description + "]";
+				+ ngo_phoneNo + ", ngo_email=" + ngo_email + ", ngo_password=" + ngo_password + "]";
 	}
-	
-	
-	
+
 
 }
