@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.app.donation_campaign.category.entity.Category;
 
 @Entity
 @Table(name = "subcategory")
@@ -20,32 +19,19 @@ public class SubCategory {
 	@Column (name = "subcategory_name")
 	private String subcategory_name;
 	
-	@Column (name = "parent_id")
-	private int parent_id;
+	@Column (name = "category_id")
+	private int category_id;
 	
-//	@ManyToOne(cascade=CascadeType.ALL)
-//	@JoinColumns({
-//		@JoinColumn( referencedColumnName = "category_id")})
-//	private Category category;
-	
-
-	public SubCategory(int subcategory_id, String subcategory_name, int parent_id, Category category) {
+		
+public SubCategory(int subcategory_id, String subcategory_name, int category_id) {
 		super();
 		this.subcategory_id = subcategory_id;
 		this.subcategory_name = subcategory_name;
-		this.parent_id = parent_id;
-//		this.category = category;
+		this.category_id = category_id;
 	}
 
 	public SubCategory() {
 		super();
-	}
-
-	public SubCategory(int subcategory_id, String subcategory_name, int parent_id) {
-		super();
-		this.subcategory_id = subcategory_id;
-		this.subcategory_name = subcategory_name;
-		this.parent_id = parent_id;
 	}
 
 	public int getSubcategory_id() {
@@ -64,21 +50,17 @@ public class SubCategory {
 		this.subcategory_name = subcategory_name;
 	}
 
-	public int getParent_id() {
-		return parent_id;
+	public int getCategory_id() {
+		return category_id;
 	}
 
-	public void setParent_id(int parent_id) {
-		this.parent_id = parent_id;
+	public void setCategory_id(int category_id) {
+		this.category_id = category_id;
 	}
-
-
 	@Override
 	public String toString() {
-		return "SubCategory [subcategory_id=" + subcategory_id + ", subcategory_name=" + subcategory_name
-				+ ", parent_id=" + parent_id + ", category=" + "]";
+		return "SubCategory [subcategory_id=" + subcategory_id + ", subcategory_name=" + subcategory_name + ", category_id="
+				+ category_id + "]";
 	}
 
-	 
-	
 }

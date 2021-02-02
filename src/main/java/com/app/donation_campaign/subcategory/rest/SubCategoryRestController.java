@@ -37,12 +37,12 @@ private SubCategoryService subCategoryService;
 	}
 	
 	@GetMapping("/subcategories/{subcategoryId}")
-	public SubCategory getSubCategory(@PathVariable int subCategoryId) {
+	public SubCategory getSubCategory(@PathVariable int subcategoryId) {
 		
-		SubCategory theSubCategory = subCategoryService.findById(subCategoryId);
+		SubCategory theSubCategory = subCategoryService.findById(subcategoryId);
 		
 		if (theSubCategory == null) {
-			throw new RuntimeException("Sub-Category not found - " + subCategoryId);
+			throw new RuntimeException("Sub-Category not found - " + subcategoryId);
 		}
 		
 		return theSubCategory;

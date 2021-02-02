@@ -25,26 +25,31 @@ public class Category {
 	
 	@Column (name = "category_name")
 	private String category_name;
-
+	
+	
 	@OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="category_id")
+	private List<SubCategory> subcategory_list=new ArrayList<>();
+
+
+/*	@OneToMany(cascade=CascadeType.ALL)
     @JoinColumn(name="parent_id")
 	private List<SubCategory> subCategories = new ArrayList<>();
-
+*/
 	
 	
-	public Category() {
-		super();
-	}
-
-	 
-	public Category(int category_id, String category_name, List<SubCategory> subCategories) {
+	public Category(int category_id, String category_name, List<SubCategory> subcategory_list) {
 		super();
 		this.category_id = category_id;
 		this.category_name = category_name;
-		this.subCategories = subCategories;
+		this.subcategory_list = subcategory_list;
 	}
 
 
+	public Category() {
+		super();
+	}
+	 
 	public Category(int category_id, String category_name) {
 		super();
 		this.category_id = category_id;
@@ -67,24 +72,19 @@ public class Category {
 		this.category_name = category_name;
 	}
 
-//	@OneToMany(fetch=FetchType.LAZY,cascade=CascadeType.ALL,mappedBy="company")
-	public List<SubCategory> getSubCategories() {
-		return subCategories;
+
+	public List<SubCategory> getSubcategory_list() {
+		return subcategory_list;
 	}
 
-	public void setSubCategories(List<SubCategory> subCategories) {
-		this.subCategories = subCategories;
+	public void setSubcategory_list(List<SubCategory> subcategory_list) {
+		this.subcategory_list = subcategory_list;
 	}
 
 	@Override
 	public String toString() {
-		return "Category [category_id=" + category_id + ", category_name=" + category_name + ", subCategories="
-				+ subCategories + "]";
+		return "Category [category_id=" + category_id + ", category_name=" + category_name + ", subcategory_list="
+				+ subcategory_list + "]";
 	}
-
-	
-	
-	
-
 
 }
