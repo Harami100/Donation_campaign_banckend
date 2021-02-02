@@ -13,4 +13,5 @@ public List<Donation> findAll();
 	
 	public void deleteById(int theDonationId);
 
+	public int getSumOfProductSubCategoryWise(int category , int subcategory);
 }

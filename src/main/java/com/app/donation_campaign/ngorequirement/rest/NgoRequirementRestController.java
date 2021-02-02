@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.donation_campaign.ngorequirement.entity.NgoRequirement;
 import com.app.donation_campaign.ngorequirement.service.NgoRequirementService;
-//@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+//@CrossOrigin(origins="http://localhost:4200")
 @RequestMapping("/api")
 public class NgoRequirementRestController {
 	private NgoRequirementService ngoRequirementService;
@@ -82,5 +82,10 @@ public class NgoRequirementRestController {
 		ngoRequirementService.deleteById(ngoRequirementId);
 		
 		return "Deleted NGO requirement Service id - " + ngoRequirementId;
+	}
+	
+	@PostMapping("/getTotalQuantityNgoReq")
+	public int getTotalQuantityNgoReq(int category, int subcategory) {
+		return ngoRequirementService.getSumOfProductSubCategoryWise(category, subcategory);
 	}
 }

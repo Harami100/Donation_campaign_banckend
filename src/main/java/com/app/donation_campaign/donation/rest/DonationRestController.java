@@ -15,20 +15,27 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.donation_campaign.donation.entity.Donation;
 import com.app.donation_campaign.donation.service.DonationService;
-//@CrossOrigin(origins = "*", allowedHeaders = "*")
+import com.app.donation_campaign.ngorequirement.entity.NgoRequirement;
+import com.app.donation_campaign.ngorequirement.service.NgoRequirementService;
+import com.app.donation_campaign.userrequirement.service.UserRequirementService;
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+//@CrossOrigin(origins="http://localhost:4200")
 @RequestMapping("/api")
 public class DonationRestController {
 	
 	private DonationService donationService;
+	
+	private NgoRequirementService ngoRequirementService;
 
+	private UserRequirementService userRequirementService;
 	
 	@Autowired
 	public DonationRestController (DonationService theDonationService)
 	{
 		donationService=theDonationService;
 	}
+	
 	
 	@GetMapping("/donations")
 	public List<Donation> findAll() {
@@ -86,5 +93,8 @@ public class DonationRestController {
 		return "Deleted donation id - " + donationId;
 	}
 
-
+	@PostMapping("/getTotalQuantity")
+	public int getTotalQuantity(int category, int subcategory) {
+		return donationService.getSumOfProductSubCategoryWise(category, subcategory);
+	}
 }

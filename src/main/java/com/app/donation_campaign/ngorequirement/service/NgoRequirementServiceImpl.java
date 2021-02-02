@@ -60,4 +60,9 @@ public class NgoRequirementServiceImpl implements NgoRequirementService{
 		ngoRequirementRepository.deleteById(theNgoRequirementId);
 	}
 
+	@Override
+	public int getSumOfProductSubCategoryWise(int category, int subcategory) {
+		// TODO Auto-generated method stub
+		return ngoRequirementRepository.getSumOfProdReqSubCategoryWise( category , subcategory);
+	}
 }

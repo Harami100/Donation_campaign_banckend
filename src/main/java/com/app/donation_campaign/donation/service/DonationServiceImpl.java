@@ -62,5 +62,12 @@ private DonationRepository donationRepository;
 		donationRepository.deleteById(theDonationId);
 	}
 
+	@Override
+	public int getSumOfProductSubCategoryWise(int category , int subcategory) {
+		// TODO Auto-generated method stub
+		
+		return donationRepository.getSumOfProductSubCategoryWise( category , subcategory);
+	}
+
 
 }

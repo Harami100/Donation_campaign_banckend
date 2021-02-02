@@ -13,4 +13,6 @@ public interface NgoRequirementService {
 	public void save(NgoRequirement theNgoRequirement);
 	
 	public void deleteById(int theNgoRequirementId);
+	
+	public int getSumOfProductSubCategoryWise(int category , int subcategory);
 }

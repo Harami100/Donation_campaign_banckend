@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.app.donation_campaign.ngorequirement.dao.NgoRequirementRepository;
+import com.app.donation_campaign.ngorequirement.service.NgoRequirementServiceImpl;
+
 @Entity
 @Table(name = "ngorequirement")
 public class NgoRequirement 
@@ -112,5 +115,6 @@ public class NgoRequirement
 				+ ", subcategory_id=" + subcategory_id + ", product_quantity=" + product_quantity + ", ngo_id=" + ngo_id
 				+ ", ngo_description=" + ngo_description + ", ngo_uid=" + ngo_uid + "]";
 	}
+	
 	
 }
